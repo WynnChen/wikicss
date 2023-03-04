@@ -4,6 +4,7 @@ Toolset to help maintain common.css on the wiki
 ## Installation (On Windows)
 1. Download PHP 8.1 or later. For Windows users, you can download it from here: https://windows.php.net/download/, just use the first Zip link. You may need VC15 or VS16 runtime too, you can find the download link on the left.
 2. Unzip the downloaded PHP archive to `wikicss/php` subfolder. There should be a `wikicss/php/php.exe` file now.
+3. Install SASS. Please refer to https://sass-lang.com/install
 
 ## Usage
 This toolset provides 5 command line commands that you can use from the command line window.
