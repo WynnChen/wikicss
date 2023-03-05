@@ -63,7 +63,7 @@ function update(array $list, Wiki $wiki):void
 				continue;
 			}
 			$filename = titleToFilename($title);
-			if(normalizeContent(file_get_contents($filename)) != normalizeContent($content)){
+			if(!file_exists($filename) or normalizeContent(file_get_contents($filename)) != normalizeContent($content)){
 				msg('Update: ', $filename);
 				@mkdir(dirname($filename), 0777, true);
 				file_put_contents($filename, $content);
