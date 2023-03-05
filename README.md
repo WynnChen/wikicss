@@ -15,13 +15,19 @@ This toolset provides 5 command line commands that you can use from the command 
 This command pull down all source `.scss` files from wiki (under `MediaWiki:Common.css/src/`) to `wikicss/scss` folder. If there already is a `scss` folder, it will be renamed to `scss.old`.
 
 ### push.bat
-This command push up all source `.scss` files in local `wikicss/scss` folder to the wiki (under `MediaWiki:Common.css/src/`).
+This command push up all source `.scss` files in local `wikicss/scss` folder to the wiki (under `MediaWiki:Common.css/src/`). It accepts an optional argument as edit summary:
+```
+push "update navbar styles"
+```
 
 ### build.bat
 This is the post-processer, it will build output `Common.css` and all theme css files. Output files are under `wikicss/output` folder.
 
 ### update.bat
-This command push up output `Common.css` and theme css files to the wiki, update `MediaWiki:Common.css` as well as `MediaWiki:Theme-Snow` and so on.
+This command push up output `Common.css` and theme css files to the wiki, update `MediaWiki:Common.css` as well as `MediaWiki:Theme-Snow` and so on. It accepts an optional argument as edit summary:
+```
+update "update to match scss changes."
+```
 
 ### go.bat
-build + update.
+build + update. It accepts an optional argument as edit summary.
