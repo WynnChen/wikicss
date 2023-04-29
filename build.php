@@ -34,10 +34,10 @@ $content = preg_replace('/\s+\/\*<<(.+)\*\//iUus', ' /*\1*/', $content);
 // directives: @theme <name> { ... }
 $themes = array();
 $content = preg_replace_callback(
-	pattern: '|^@theme\s+(.+)\s*{$\n(.+)^}$\n|iUusm',
+	pattern: '|^(\s*)@theme\s+(.+)\s*{$\n(.+)^\1}$\n|iUusm',
 	callback: function($matches)use(&$themes){
-		$name = $matches[1];
-		$content = preg_replace('/^  /m', '', $matches[2]);
+		$name = $matches[2];
+		$content = preg_replace('/^  /m', '', $matches[3]);
 		$themes[$name] = ($themes[$name]??'').$content;
 		return '';
 	},
