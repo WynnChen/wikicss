@@ -34,7 +34,7 @@ $content = preg_replace('/\s+\/\*<<(.+)\*\//iUus', ' /*\1*/', $content);
 // directives: @theme <name> { ... }
 $themes = array();
 $content = preg_replace_callback(
-	pattern: '|^(\s*)@theme\s+(.+)\s*{$\n(.+)^\1}$\n|iUusm',
+	pattern: '|^(\s*)@theme\s+(\w+)\s*{$\n(.+)^\1}$\n|iUusm',
 	callback: function($matches)use(&$themes){
 		$name = $matches[2];
 		$content = preg_replace('/^  /m', '', $matches[3]);
