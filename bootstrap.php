@@ -60,7 +60,9 @@ if (!defined('ROOT_DIR')){
 			'pslimit' => 500,
 		);
 		$list = $wiki->query($params, 'query', 'prefixsearch');
-		return array_map(fn($info) => normalizeFilename($info['title']), $list);
+		$list = array_map(fn($info) => normalizeFilename($info['title']), $list);
+		unset($list['MediaWiki:Common.css/src/nav']);
+		return $list;
 	}
 
 	function getLocalPageList():array
