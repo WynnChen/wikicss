@@ -61,7 +61,7 @@ if (!defined('ROOT_DIR')){
 		);
 		$list = $wiki->query($params, 'query', 'prefixsearch');
 		$list = array_map(fn($info) => normalizeFilename($info['title']), $list);
-		unset($list['MediaWiki:Common.css/src/nav']);
+		$list = array_filter($list, fn($title) => $title != 'MediaWiki:Common.css/src/nav');
 		return $list;
 	}
 
